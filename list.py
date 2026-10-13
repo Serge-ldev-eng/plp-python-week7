@@ -1,41 +1,16 @@
-# shopping_list.py - Stage 2: Build the Manager
+fruits = ["mango", "banana", "orange", "apple", "grape"]
 
-shopping_list = []
+# Step 1: Access
+print(fruits[0])
+print(fruits[-1])
 
-def add_item(item):
-    shopping_list.append(item)
-    print(f"'{item}' has been added.")
+# Step 2: Append, remove, measure - print after each change
+print(f"Original list: {fruits}")
 
-def remove_item(item):
-    # Safer to check 'in' before remove to avoid ValueError
-    if item in shopping_list:
-        shopping_list.remove(item)
-        print(f"'{item}' has been removed.")
-    else:
-        print(f"'{item}' not found in the list.")
+fruits.append("pineapple")
+print(f"After append: {fruits}")
 
-def view_list():
-    if not shopping_list:
-        print("Shopping list is empty.")
-    else:
-        print("\n--- Shopping List ---")
-        for i, item in enumerate(shopping_list, start=1):
-            print(f"{i}. {item}")
+fruits.remove("banana")
+print(f"After remove: {fruits}")
 
-def main():
-    while True:
-        print("\n1. Add 2. Remove 3. View 4. Exit")
-        choice = input("Enter choice: ")
-        if choice == "1":
-            add_item(input("Item to add: ").strip())
-        elif choice == "2":
-            remove_item(input("Item to remove: ").strip())
-        elif choice == "3":
-            view_list()
-        elif choice == "4":
-            break
-        else:
-            print("Invalid choice.")
-
-if __name__ == "__main__":
-    main()
+print(f"Length: {len(fruits)}")

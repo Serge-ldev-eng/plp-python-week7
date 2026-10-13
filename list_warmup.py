@@ -1,6 +1,6 @@
 fruits = ["mango", "banana", "orange", "apple", "grape"]
 
-# Step 1: Access
+# Step 1: Accesslist.warmu.py
 print(fruits[0])
 print(fruits[-1])
 

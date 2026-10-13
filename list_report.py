@@ -1,4 +1,4 @@
-# list_report.py - Stage 3: Smart Report
+list_report.py - Stage 3: Smart Report
 
 shopping_list = ["Milk", "Bread", "Eggs", "Milk", "Apples"]
 

@@ -1,21 +1,25 @@
-list_report.py - Stage 3: Smart Report
-
-shopping_list = ["Milk", "Bread", "Eggs", "Milk", "Apples"]
-
-# Generate smart report
-print("--- Shopping List Smart Report ---")
-print(f"Total items: {len(shopping_list)}")
-print(f"Unique items: {len(set(shopping_list))}")
-print(f"First item: {shopping_list[0]}")
-print(f"Last item: {shopping_list[-1]}")
-
-# Count occurrences
-from collections import Counter
-counts = Counter(shopping_list)
-print("\nItem counts:")
-for item, count in counts.items():
-    print(f"- {item}: {count}")
-
-# Sorted report
-print(f"\nSorted list: {sorted(shopping_list)}")
-print(f"Reversed list: {list(reversed(shopping_list))}")
+items = []
+while True:
+    choice = input("add / remove / show / done: ").lower()
+    if choice == "done":
+        break
+    elif choice == "add":
+        item = input("Add what? ")
+        items.append(item)
+        print(f"{item} added.")
+    elif choice == "remove":
+        # Guard before act - this is what gives marks
+        item = input("Remove what? ")
+        if item in items:
+            items.remove(item)
+            print(f"{item} removed.")
+        else:
+            print("That item is not on your list.")
+    elif choice == "show":
+        if not items:
+            print("Your list is empty.")
+        else:
+            for i, it in enumerate(items, 1):
+                print(f"{i}. {it}")
+    else:
+        print("Invalid choice. Use add / remove / show / done")
